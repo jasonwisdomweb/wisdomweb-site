@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WisdomWeb — Live online coding school for children ages 7–12 in Singapore. Small classes, expert teachers, and a personalised Computational Thinking Profile." />
+  <title>WisdomWeb — Live Online Coding School for Children in Singapore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">W/ WisdomWeb</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#programmes">Coding Programme</a></li>
+        <li><a href="#ctp">CTP</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <a href="https://wa.me/PHONE?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20the%20Thinking%20Profile%20session%20for%20my%20child."
+         class="btn btn-primary nav-cta" target="_blank" rel="noopener noreferrer">
+        Book A Free Thinking Profile
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+
+    <div class="zodiac-badge" id="zodiac-badge">Year of the Horse 🐴</div>
+
+    <span class="zodiac-accent za-1" aria-hidden="true"></span>
+    <span class="zodiac-accent za-2" aria-hidden="true"></span>
+    <span class="zodiac-accent za-3" aria-hidden="true"></span>
+    <span class="zodiac-accent za-4" aria-hidden="true"></span>
+    <span class="zodiac-accent za-5" aria-hidden="true"></span>
+    <span class="zodiac-accent za-6" aria-hidden="true"></span>
+
+    <div class="container hero-container">
+      <div class="hero-text">
+        <h1 class="hero-headline">
+          WisdomWeb: empower your child's
+          <span class="text-accent">coding</span> journey
+        </h1>
+        <p class="hero-subtext">
+          Before your child enters any class, we build their Computational Thinking Profile — a personalised assessment of how they reason, sequence, and solve problems. Not what they already know. How they think.
+        </p>
+        <a href="https://wa.me/PHONE?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20the%20Thinking%20Profile%20session%20for%20my%20child."
+           class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+          Book Your Free Thinking Profile
+        </a>
+      </div>
+
+      <div class="hero-visual">
+        <div class="char-placeholder" id="hero-character">
+          <div class="placeholder-inner">
+            <svg class="placeholder-icon" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+              <circle cx="40" cy="26" r="16" stroke="currentColor" stroke-width="2" stroke-dasharray="5 3"/>
+              <path d="M14 70c0-14.36 11.64-26 26-26s26 11.64 26 26" stroke="currentColor" stroke-width="2" stroke-dasharray="5 3" stroke-linecap="round"/>
+            </svg>
+            <span>3D Character<br>Coming Soon</span>
+          </div>
+        </div>
+        <div class="hero-deco-ring"></div>
+        <div class="hero-deco-dot hero-deco-dot--1"></div>
+        <div class="hero-deco-dot hero-deco-dot--2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <section class="trust-bar" aria-label="Key features">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect x="3" y="7" width="26" height="18" rx="3" stroke="white" stroke-width="2"/>
+              <path d="M3 13h26" stroke="white" stroke-width="1.5"/>
+              <circle cx="16" cy="28" r="1.5" fill="white"/>
+              <path d="M11 31h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span>Live Zoom Classes</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <circle cx="10" cy="11" r="5" stroke="white" stroke-width="2"/>
+              <circle cx="22" cy="11" r="5" stroke="white" stroke-width="2"/>
+              <path d="M2 28c0-7 4-11 8-11" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M30 28c0-7-4-11-8-11" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 28c0-4 1.8-7 4-7s4 3 4 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span>Max 4 Students</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path d="M16 4c-6 0-9 5-9 9s3 6 4 7l1 8h8l1-8c1-1 4-3 4-7s-3-9-9-9z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M12 28h8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span>Ages 7–12</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <circle cx="16" cy="16" r="13" stroke="white" stroke-width="2"/>
+              <path d="M10 16l4 4 8-8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span>Singapore MOE-aligned</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY WISDOMWEB ===== -->
+  <section class="section why-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why learn with WisdomWeb?</h2>
+      </div>
+      <div class="cards-grid four-col">
+        <article class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <ellipse cx="24" cy="24" rx="20" ry="14" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="24" cy="24" r="5" fill="currentColor"/>
+              <circle cx="24" cy="24" r="2" fill="white"/>
+            </svg>
+          </div>
+          <h3>Small Class Sizes</h3>
+          <p>Maximum 4 students per class. Every child is seen.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M24 8a14 14 0 100 28 14 14 0 000-28z" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M20 22l3 3 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 38l-4 4M32 38l4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Thinking-First Curriculum</h3>
+          <p>We assess how your child thinks before they write a single line of code.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <rect x="8" y="10" width="32" height="22" rx="3" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M8 18h32" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
+              <circle cx="24" cy="23" r="4" fill="currentColor"/>
+              <path d="M15 37l-3 5M33 37l3 5M11 42h26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Live Classes by Expert Teachers</h3>
+          <p>Real-time feedback, genuine interaction, zero pre-recorded lessons.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <rect x="8" y="6" width="32" height="36" rx="3" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M16 16h16M16 22h16M16 28h10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="36" cy="36" r="7" fill="white" stroke="currentColor" stroke-width="2"/>
+              <path d="M33 36l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Personalised Progress Reports</h3>
+          <p>You know exactly where your child is after every 8-lesson block.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTP SECTION ===== -->
+  <section class="section ctp-section" id="ctp">
+    <div class="container">
+      <div class="ctp-inner">
+        <div class="ctp-visual">
+          <div class="char-placeholder" id="ctp-character">
+            <div class="placeholder-inner">
+              <svg class="placeholder-icon" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+                <circle cx="40" cy="26" r="16" stroke="currentColor" stroke-width="2" stroke-dasharray="5 3"/>
+                <path d="M14 70c0-14.36 11.64-26 26-26s26 11.64 26 26" stroke="currentColor" stroke-width="2" stroke-dasharray="5 3" stroke-linecap="round"/>
+              </svg>
+              <span>Character<br>Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ctp-content">
+          <h2>What is the <span class="text-accent">Computational Thinking Profile</span>?</h2>
+          <p>Before your child joins any class, we run a 45-minute diagnostic session. We assess six dimensions of how they think — not what they already know. The result is a personalised report that places them in exactly the right programme.</p>
+
+          <div class="ctp-chips">
+            <span class="chip">🔢 Decomposition</span>
+            <span class="chip">🔍 Pattern Recognition</span>
+            <span class="chip">🧩 Abstraction</span>
+            <span class="chip">📋 Algorithms</span>
+            <span class="chip">🔄 Logic</span>
+            <span class="chip">💡 Problem Solving</span>
+          </div>
+
+          <a href="https://wa.me/PHONE?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20the%20Thinking%20Profile%20session%20for%20my%20child."
+             class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+            Book A Free CTP Session
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CODING PROGRAMMES ===== -->
+  <section class="section programmes-section" id="programmes">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Coding Programmes</h2>
+      </div>
+      <div class="cards-grid two-col">
+        <article class="programme-card">
+          <div class="prog-badge">Scratch</div>
+          <h3 class="prog-title">Scratch Foundations</h3>
+          <ul class="prog-details" role="list">
+            <li><span class="detail-label">For:</span><span>Lower computational thinking band</span></li>
+            <li><span class="detail-label">Duration:</span><span>8 lessons</span></li>
+            <li><span class="detail-label">Class size:</span><span>Max 4 students</span></li>
+            <li><span class="detail-label">Taught via:</span><span>Live Zoom</span></li>
+          </ul>
+          <a href="https://wa.me/PHONE?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20the%20Thinking%20Profile%20session%20for%20my%20child."
+             class="btn btn-outline" target="_blank" rel="noopener noreferrer">Learn More</a>
+        </article>
+
+        <article class="programme-card programme-card--featured">
+          <div class="prog-badge prog-badge--featured">Scratch</div>
+          <h3 class="prog-title">Scratch Advanced</h3>
+          <ul class="prog-details" role="list">
+            <li><span class="detail-label">For:</span><span>Higher computational thinking band</span></li>
+            <li><span class="detail-label">Duration:</span><span>8 lessons</span></li>
+            <li><span class="detail-label">Class size:</span><span>Max 4 students</span></li>
+            <li><span class="detail-label">Taught via:</span><span>Live Zoom</span></li>
+          </ul>
+          <a href="https://wa.me/PHONE?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20the%20Thinking%20Profile%20session%20for%20my%20child."
+             class="btn btn-primary" target="_blank" rel="noopener noreferrer">Learn More</a>
+        </article>
+      </div>
+      <p class="coming-soon-note">Python and AI Applications coming soon</p>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>What parents say</h2>
+      </div>
+      <div class="cards-grid three-col">
+        <article class="testimonial-card">
+          <div class="testimonial-avatar" aria-hidden="true"></div>
+          <blockquote class="testimonial-quote">"Testimonial coming soon — our pilot launches Q2 2026."</blockquote>
+          <cite class="testimonial-author">Parent of [Child Name]</cite>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-avatar" aria-hidden="true"></div>
+          <blockquote class="testimonial-quote">"Testimonial coming soon — our pilot launches Q2 2026."</blockquote>
+          <cite class="testimonial-author">Parent of [Child Name]</cite>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-avatar" aria-hidden="true"></div>
+          <blockquote class="testimonial-quote">"Testimonial coming soon — our pilot launches Q2 2026."</blockquote>
+          <cite class="testimonial-author">Parent of [Child Name]</cite>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>WisdomWeb FAQ</h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What age group is WisdomWeb for?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>WisdomWeb is designed for children aged 7 to 12 years old. Our curriculum and teaching approach is specifically tailored to this age group's cognitive development and learning style.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How many students are in each class?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Maximum 4 students per class. We deliberately keep classes small so every child receives individual attention, feedback, and guidance from their teacher during every single session.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is the Computational Thinking Profile?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>The Computational Thinking Profile (CTP) is a 45-minute diagnostic session run before your child starts any programme. We assess six dimensions of how your child thinks — not what they already know. The result is a personalised report that places them in exactly the right programme for their level and thinking style.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How much does a programme cost?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Each programme runs as an 8-lesson block. For current pricing, please contact us via WhatsApp — we'll be happy to share details and answer any questions you have.</p>
+              <a href="https://wa.me/PHONE?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20the%20Thinking%20Profile%20session%20for%20my%20child."
+                 class="btn btn-primary btn-small" style="margin-top:14px;display:inline-flex;"
+                 target="_blank" rel="noopener noreferrer">Ask on WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What happens after the 8 lessons?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>At the end of each 8-lesson block, you'll receive a personalised progress report. Based on your child's progress, we'll recommend the right next programme — whether that's renewing the current level or advancing to the next one.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do you offer a trial class?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>We don't offer a traditional trial class — instead, we offer a free Computational Thinking Profile (CTP) diagnostic session. This gives both you and your child a much richer experience: you get a personalised report, and your child gets placed in exactly the right programme for their thinking style.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">W/ WisdomWeb</a>
+          <p>Live online coding school for children ages 7–12 in Singapore.</p>
+          <div class="footer-social">
+            <a href="https://wa.me/PHONE?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20the%20Thinking%20Profile%20session%20for%20my%20child."
+               target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="https://instagram.com/wisdomweb.io" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#programmes">Coding Programme</a>
+          <a href="#ctp">CTP</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="footer-copy">
+          <p>© 2024 WisdomWeb.<br>All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING WHATSAPP ===== -->
+  <a href="https://wa.me/PHONE?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20the%20Thinking%20Profile%20session%20for%20my%20child."
+     class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="whatsapp-label">Chat with us</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
