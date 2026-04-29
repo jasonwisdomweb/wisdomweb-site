@@ -181,7 +181,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: relative;
   padding: 96px 0 80px;
   overflow: hidden;
-  background: linear-gradient(140deg, #FAF5FF 0%, #FFFFFF 55%, #FFF7ED 100%);
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
 }
 
 /* Background decorative blobs */
@@ -312,9 +312,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   z-index: 1;
   width: 100%;
   max-width: 400px;
+  max-height: 420px;
   aspect-ratio: 3 / 4;
   border-radius: 28px;
-  border: 2.5px dashed rgba(124,58,237,.25);
+  border: 2.5px dashed rgba(124,58,237,.30);
   background: linear-gradient(135deg, rgba(124,58,237,.03) 0%, rgba(249,115,22,.03) 100%);
   display: flex;
   align-items: center;
@@ -812,7 +813,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-deco-ring { display: none; }
 
   /* Trust bar */
-  .trust-items { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .trust-items { grid-template-columns: repeat(2, 1fr); gap: 20px; padding-right: 80px; }
 
   /* CTP */
   .ctp-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -846,7 +847,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-subtext { font-size: 1rem; }
   .hero-visual { display: none; }
 
-  .btn-large { width: 100%; }
+  .btn-large { width: 100%; margin-bottom: 2rem; }
 
   .ctp-visual { display: none; }
 
