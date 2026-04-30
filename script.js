@@ -34,16 +34,16 @@ function initZodiac() {
 
 function injectZodiacPNGs() {
   const PLACEMENTS = [
-    { section: '#home',                 file: 'Horse.png',   top: 20, left: 72, featured: true  },
-    { section: '#home',                 file: 'Rat.png',     top: 70, left: 1,  featured: false },
-    { section: '#ctp',                  file: 'Dragon.png',  top: 15, left: 2,  featured: false },
-    { section: '#ctp',                  file: 'Goat.png',    top: 60, left: 88, featured: false },
-    { section: '#about',                file: 'Snake.png',   top: 60, left: 1,  featured: false },
-    { section: '#programmes',           file: 'Ox.png',      top: 20, left: 1,  featured: false },
-    { section: '.testimonials-section', file: 'Rooster.png', top: 15, left: 1,  featured: false },
-    { section: '.testimonials-section', file: 'Dog.png',     top: 60, left: 88, featured: false },
-    { section: '#faq',                  file: 'Pig.png',     top: 15, left: 1,  featured: false },
-    { section: '#faq',                  file: 'Monkey.png',  top: 60, left: 88, featured: false },
+    { section: '#home',                 file: 'Horse.png',   top: 5,  left: 68, featured: true  },
+    { section: '#home',                 file: 'Dragon.png',  top: 72, left: 2,  featured: false },
+    { section: '#about',                file: 'Rabbit.png',  top: 5,  left: 88, featured: false },
+    { section: '#ctp',                  file: 'Snake.png',   top: 5,  left: 88, featured: false },
+    { section: '#ctp',                  file: 'Goat.png',    top: 65, left: 2,  featured: false },
+    { section: '#programmes',           file: 'Ox.png',      top: 5,  left: 88, featured: false },
+    { section: '.testimonials-section', file: 'Rooster.png', top: 5,  left: 88, featured: false },
+    { section: '.testimonials-section', file: 'Dog.png',     top: 65, left: 2,  featured: false },
+    { section: '#faq',                  file: 'Pig.png',     top: 5,  left: 88, featured: false },
+    { section: '#faq',                  file: 'Monkey.png',  top: 65, left: 2,  featured: false },
   ];
 
   PLACEMENTS.forEach(({ section, file, top, left, featured }, i) => {

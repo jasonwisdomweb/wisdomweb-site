@@ -381,6 +381,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   opacity: 0.95;
   z-index: 2;
 }
+.flipped { transform: scaleX(-1); }
+
+.footer-unicorn {
+  width: 100px;
+  height: auto;
+  opacity: 0.55;
+  margin-top: 16px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255,255,255,0.15));
+}
 
 /* ===== WHY WISDOMWEB ===== */
 .why-section { background: var(--bg); position: relative; overflow: visible; }
@@ -967,9 +977,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .zodiac-wrapper { display: none !important; }
   .zodiac-unicorn {
     display: block !important;
-    width: 90px !important;
+    width: 80px !important;
     top: auto !important;
-    bottom: 20px !important;
+    bottom: 80px !important;
     right: 16px !important;
     left: auto !important;
   }
