@@ -5,18 +5,18 @@
 // ===== ZODIAC YEAR DETECTION =====
 
 const ZODIAC_CYCLE = [
-  { name: 'Rat',     emoji: '🐭' },  // 2020
-  { name: 'Ox',      emoji: '🐂' },  // 2021
-  { name: 'Tiger',   emoji: '🐯' },  // 2022
-  { name: 'Rabbit',  emoji: '🐰' },  // 2023
-  { name: 'Dragon',  emoji: '🐉' },  // 2024
-  { name: 'Snake',   emoji: '🐍' },  // 2025
-  { name: 'Horse',   emoji: '🐴' },  // 2026
-  { name: 'Goat',    emoji: '🐐' },  // 2027
-  { name: 'Monkey',  emoji: '🐒' },  // 2028
-  { name: 'Rooster', emoji: '🐓' },  // 2029
-  { name: 'Dog',     emoji: '🐕' },  // 2030
-  { name: 'Pig',     emoji: '🐷' },  // 2031
+  { name: 'Rat',     file: 'Rat.png'     },  // 2020
+  { name: 'Ox',      file: 'Ox.png'      },  // 2021
+  { name: 'Tiger',   file: 'Tiger.png'   },  // 2022
+  { name: 'Rabbit',  file: 'Rabbit.png'  },  // 2023
+  { name: 'Dragon',  file: 'Dragon.png'  },  // 2024
+  { name: 'Snake',   file: 'Snake.png'   },  // 2025
+  { name: 'Horse',   file: 'Horse.png'   },  // 2026
+  { name: 'Goat',    file: 'Goat.png'    },  // 2027
+  { name: 'Monkey',  file: 'Monkey.png'  },  // 2028
+  { name: 'Rooster', file: 'Rooster.png' },  // 2029
+  { name: 'Dog',     file: 'Dog.png'     },  // 2030
+  { name: 'Pig',     file: 'Pig.png'     },  // 2031
 ];
 
 function getZodiacAnimal(year) {
@@ -26,78 +26,60 @@ function getZodiacAnimal(year) {
 }
 
 function initZodiac() {
-  const year = new Date().getFullYear();
+  const year   = new Date().getFullYear();
   const animal = getZodiacAnimal(year);
 
   const badge = document.getElementById('zodiac-badge');
   if (badge) {
-    badge.textContent = `Year of the ${animal.name} ${animal.emoji}`;
+    badge.textContent = `Year of the ${animal.name}`;
   }
-
-  document.querySelectorAll('.zodiac-accent').forEach(el => {
-    el.textContent = animal.emoji;
-  });
 }
 
 
-// ===== ZODIAC SCATTER ACROSS SECTIONS =====
+// ===== ZODIAC PNG SCATTER =====
 
-function scatterZodiacAccents() {
-  const year   = new Date().getFullYear();
-  const animal = getZodiacAnimal(year);
-
-  const ALL_ANIMALS = ['🐭','🐂','🐯','🐰','🐲','🐍','🐴','🐑','🐵','🐓','🐶','🐷'];
-
-  const SECTION_SELECTORS = [
-    '#home',
-    '.trust-bar',
-    '#about',
-    '#ctp',
-    '#programmes',
-    '.testimonials-section',
-    '#faq',
+function injectZodiacPNGs() {
+  const PLACEMENTS = [
+    { section: '#home',         file: 'Horse.png',  top: 8,  left: 62, featured: true  },
+    { section: '#home',         file: 'Dragon.png', top: 78, left: 3,  featured: false },
+    { section: '.trust-bar',    file: 'Rat.png',    top: 30, left: 1,  featured: false },
+    { section: '.trust-bar',    file: 'Tiger.png',  top: 30, left: 95, featured: false },
+    { section: '#about',        file: 'Monkey.png', top: 8,  left: 90, featured: false },
+    { section: '#about',        file: 'Goat.png',   top: 75, left: 2,  featured: false },
+    { section: '#about',        file: 'Horse.png',  top: 45, left: 86, featured: true  },
+    { section: '#ctp',          file: 'Snake.png',  top: 5,  left: 2,  featured: false },
+    { section: '#ctp',          file: 'Rabbit.png', top: 75, left: 90, featured: false },
+    { section: '#programmes',   file: 'Ox.png',     top: 5,  left: 1,  featured: false },
+    { section: '#programmes',   file: 'Horse.png',  top: 80, left: 90, featured: true  },
+    { section: '#faq',          file: 'Dragon.png', top: 5,  left: 92, featured: false },
+    { section: '#faq',          file: 'Tiger.png',  top: 85, left: 2,  featured: false },
   ];
 
-  // Placement slots: [top%, left%] pairs per section
-  const SLOTS = [
-    [{ t: 15, l: 92 }, { t: 75, l: 5  }, { t: 45, l: 96 }],
-    [{ t: 20, l: 3  }, { t: 60, l: 90 }],
-    [{ t: 10, l: 94 }, { t: 80, l: 2  }, { t: 50, l: 97 }],
-    [{ t: 8,  l: 3  }, { t: 85, l: 95 }],
-    [{ t: 12, l: 96 }, { t: 78, l: 3  }, { t: 40, l: 94 }],
-    [{ t: 10, l: 2  }, { t: 70, l: 95 }],
-    [{ t: 8,  l: 94 }, { t: 82, l: 2  }, { t: 45, l: 96 }],
-  ];
+  PLACEMENTS.forEach(({ section, file, top, left, featured }, i) => {
+    const el = document.querySelector(section);
+    if (!el) return;
 
-  SECTION_SELECTORS.forEach((sel, sIdx) => {
-    const section = document.querySelector(sel);
-    if (!section) return;
+    if (getComputedStyle(el).position === 'static') {
+      el.style.position = 'relative';
+    }
 
-    const computed = getComputedStyle(section).position;
-    if (computed === 'static') section.style.position = 'relative';
-
-    const slots = SLOTS[sIdx];
-    slots.forEach((slot, i) => {
-      const emoji   = ALL_ANIMALS[(sIdx * 3 + i) % ALL_ANIMALS.length];
-      const isHero  = emoji === animal.emoji;
-
-      const span        = document.createElement('span');
-      span.textContent  = emoji;
-      span.setAttribute('aria-hidden', 'true');
-      span.style.cssText = `
-        position: absolute;
-        top: ${slot.t}%;
-        left: ${slot.l}%;
-        font-size: ${isHero ? '2.5rem' : '2rem'};
-        opacity: ${isHero ? '0.25' : '0.12'};
-        pointer-events: none;
-        user-select: none;
-        z-index: 0;
-        animation: zodiacFloat ${5 + (i * 1.3)}s ease-in-out infinite;
-        animation-delay: ${i * 0.7}s;
-      `;
-      section.appendChild(span);
-    });
+    const img = document.createElement('img');
+    img.src = `assets/images/${file}`;
+    img.alt = '';
+    img.setAttribute('aria-hidden', 'true');
+    img.style.cssText = `
+      position: absolute;
+      top: ${top}%;
+      left: ${left}%;
+      width: ${featured ? '140px' : '90px'};
+      opacity: ${featured ? '0.28' : '0.13'};
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+      animation: zodiacFloat ${6 + (i % 3) * 1.5}s ease-in-out infinite;
+      animation-delay: ${(i * 0.6).toFixed(1)}s;
+    `;
+    el.appendChild(img);
   });
 }
 
@@ -162,19 +144,57 @@ function initFAQ() {
     btn.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
 
-      // Close all
       items.forEach(other => {
         other.classList.remove('open');
         other.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
       });
 
-      // Open clicked (unless it was already open)
       if (!isOpen) {
         item.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
+}
+
+
+// ===== TESTIMONIALS CAROUSEL =====
+
+function initCarousel() {
+  const track          = document.getElementById('carousel-track');
+  const dotsContainer  = document.getElementById('carousel-dots');
+  const prevBtn        = document.getElementById('carousel-prev');
+  const nextBtn        = document.getElementById('carousel-next');
+  if (!track) return;
+
+  const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+  const dots   = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.dot')) : [];
+  let current  = 0;
+  let timer;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    if (dots[current]) dots[current].classList.remove('dot--active');
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].classList.add('active');
+    if (dots[current]) dots[current].classList.add('dot--active');
+  }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 6000);
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { goTo(current - 1); startTimer(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { goTo(current + 1); startTimer(); });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { goTo(i); startTimer(); });
+  });
+
+  startTimer();
 }
 
 
@@ -218,13 +238,13 @@ function initScrollAnimations() {
   const selectors = [
     '.feature-card',
     '.programme-card',
-    '.testimonial-card',
     '.faq-item',
     '.trust-item',
     '.ctp-content',
     '.ctp-visual',
     '.hero-text',
     '.hero-visual',
+    '.testimonial-carousel',
   ];
 
   document.querySelectorAll(selectors.join(',')).forEach((el, i) => {
@@ -239,10 +259,11 @@ function initScrollAnimations() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initZodiac();
-  scatterZodiacAccents();
+  injectZodiacPNGs();
   initStickyNav();
   initHamburger();
   initFAQ();
+  initCarousel();
   initSmoothScroll();
   initScrollAnimations();
 });
