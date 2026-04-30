@@ -26,13 +26,7 @@ function getZodiacAnimal(year) {
 }
 
 function initZodiac() {
-  const year   = new Date().getFullYear();
-  const animal = getZodiacAnimal(year);
-
-  const badge = document.getElementById('zodiac-badge');
-  if (badge) {
-    badge.textContent = `Year of the ${animal.name}`;
-  }
+  // ZODIAC_CYCLE is used by injectZodiacPNGs; badge element removed from HTML
 }
 
 
@@ -40,46 +34,48 @@ function initZodiac() {
 
 function injectZodiacPNGs() {
   const PLACEMENTS = [
-    { section: '#home',         file: 'Horse.png',  top: 8,  left: 62, featured: true  },
-    { section: '#home',         file: 'Dragon.png', top: 78, left: 3,  featured: false },
-    { section: '.trust-bar',    file: 'Rat.png',    top: 30, left: 1,  featured: false },
-    { section: '.trust-bar',    file: 'Tiger.png',  top: 30, left: 95, featured: false },
-    { section: '#about',        file: 'Monkey.png', top: 8,  left: 90, featured: false },
-    { section: '#about',        file: 'Goat.png',   top: 75, left: 2,  featured: false },
-    { section: '#about',        file: 'Horse.png',  top: 45, left: 86, featured: true  },
-    { section: '#ctp',          file: 'Snake.png',  top: 5,  left: 2,  featured: false },
-    { section: '#ctp',          file: 'Rabbit.png', top: 75, left: 90, featured: false },
-    { section: '#programmes',   file: 'Ox.png',     top: 5,  left: 1,  featured: false },
-    { section: '#programmes',   file: 'Horse.png',  top: 80, left: 90, featured: true  },
-    { section: '#faq',          file: 'Dragon.png', top: 5,  left: 92, featured: false },
-    { section: '#faq',          file: 'Tiger.png',  top: 85, left: 2,  featured: false },
+    { section: '#home',                  file: 'Horse.png',   top: 8,  left: 62, featured: true  },
+    { section: '#home',                  file: 'Dragon.png',  top: 78, left: 3,  featured: false },
+    { section: '.trust-bar',             file: 'Rat.png',     top: 20, left: 1,  featured: false },
+    { section: '.trust-bar',             file: 'Tiger.png',   top: 20, left: 94, featured: false },
+    { section: '#about',                 file: 'Monkey.png',  top: 8,  left: 90, featured: false },
+    { section: '#about',                 file: 'Goat.png',    top: 70, left: 1,  featured: false },
+    { section: '#about',                 file: 'Horse.png',   top: 40, left: 85, featured: true  },
+    { section: '#ctp',                   file: 'Snake.png',   top: 5,  left: 2,  featured: false },
+    { section: '#ctp',                   file: 'Rabbit.png',  top: 70, left: 90, featured: false },
+    { section: '#programmes',            file: 'Ox.png',      top: 5,  left: 1,  featured: false },
+    { section: '#programmes',            file: 'Horse.png',   top: 75, left: 88, featured: true  },
+    { section: '.testimonials-section',  file: 'Dog.png',     top: 5,  left: 92, featured: false },
+    { section: '.testimonials-section',  file: 'Pig.png',     top: 75, left: 1,  featured: false },
+    { section: '#faq',                   file: 'Rooster.png', top: 5,  left: 92, featured: false },
+    { section: '#faq',                   file: 'Tiger.png',   top: 80, left: 1,  featured: false },
   ];
 
   PLACEMENTS.forEach(({ section, file, top, left, featured }, i) => {
     const el = document.querySelector(section);
     if (!el) return;
 
-    if (getComputedStyle(el).position === 'static') {
-      el.style.position = 'relative';
-    }
+    if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+
+    const size      = featured ? 220 : 160;
+    const opacity   = featured ? 0.50 : 0.30;
+    const glowColor = featured ? 'rgba(249,115,22,0.20)' : 'rgba(124,58,237,0.14)';
+
+    const wrapper = document.createElement('div');
+    wrapper.setAttribute('aria-hidden', 'true');
+    wrapper.style.cssText = `position:absolute;top:${top}%;left:${left}%;width:${size}px;pointer-events:none;user-select:none;z-index:0;`;
+
+    const glow = document.createElement('div');
+    glow.style.cssText = `position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,${glowColor} 0%,transparent 70%);z-index:0;`;
 
     const img = document.createElement('img');
     img.src = `assets/images/${file}`;
     img.alt = '';
-    img.setAttribute('aria-hidden', 'true');
-    img.style.cssText = `
-      position: absolute;
-      top: ${top}%;
-      left: ${left}%;
-      width: ${featured ? '140px' : '90px'};
-      opacity: ${featured ? '0.28' : '0.13'};
-      pointer-events: none;
-      user-select: none;
-      z-index: 0;
-      animation: zodiacFloat ${6 + (i % 3) * 1.5}s ease-in-out infinite;
-      animation-delay: ${(i * 0.6).toFixed(1)}s;
-    `;
-    el.appendChild(img);
+    img.style.cssText = `position:relative;width:100%;height:auto;opacity:${opacity};animation:zodiacFloat ${6 + (i % 3) * 1.5}s ease-in-out infinite;animation-delay:${(i * 0.6).toFixed(1)}s;z-index:1;`;
+
+    wrapper.appendChild(glow);
+    wrapper.appendChild(img);
+    el.appendChild(wrapper);
   });
 }
 
@@ -158,46 +154,6 @@ function initFAQ() {
 }
 
 
-// ===== TESTIMONIALS CAROUSEL =====
-
-function initCarousel() {
-  const track          = document.getElementById('carousel-track');
-  const dotsContainer  = document.getElementById('carousel-dots');
-  const prevBtn        = document.getElementById('carousel-prev');
-  const nextBtn        = document.getElementById('carousel-next');
-  if (!track) return;
-
-  const slides = Array.from(track.querySelectorAll('.carousel-slide'));
-  const dots   = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.dot')) : [];
-  let current  = 0;
-  let timer;
-
-  function goTo(index) {
-    slides[current].classList.remove('active');
-    if (dots[current]) dots[current].classList.remove('dot--active');
-
-    current = (index + slides.length) % slides.length;
-
-    slides[current].classList.add('active');
-    if (dots[current]) dots[current].classList.add('dot--active');
-  }
-
-  function startTimer() {
-    clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), 6000);
-  }
-
-  if (prevBtn) prevBtn.addEventListener('click', () => { goTo(current - 1); startTimer(); });
-  if (nextBtn) nextBtn.addEventListener('click', () => { goTo(current + 1); startTimer(); });
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => { goTo(i); startTimer(); });
-  });
-
-  startTimer();
-}
-
-
 // ===== SMOOTH SCROLL (offset for sticky nav) =====
 
 function initSmoothScroll() {
@@ -244,7 +200,7 @@ function initScrollAnimations() {
     '.ctp-visual',
     '.hero-text',
     '.hero-visual',
-    '.testimonial-carousel',
+    '.testimonials-grid',
   ];
 
   document.querySelectorAll(selectors.join(',')).forEach((el, i) => {
@@ -263,7 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyNav();
   initHamburger();
   initFAQ();
-  initCarousel();
   initSmoothScroll();
   initScrollAnimations();
 });
