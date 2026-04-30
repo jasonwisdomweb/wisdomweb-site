@@ -806,10 +806,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   bottom: 0;
   left: 0;
   right: 0;
-  background: #7C3AED;
-  z-index: 1000;
+  background: linear-gradient(135deg, #D946EF 0%, #9333EA 100%);
+  z-index: 998;
   padding: 14px 24px;
-  box-shadow: 0 -4px 24px rgba(124,58,237,0.25);
+  box-shadow: 0 -4px 24px rgba(217,70,239,0.30);
 }
 .ctp-banner-inner {
   max-width: 1280px;
@@ -849,7 +849,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ===== FLOATING WHATSAPP ===== */
 .whatsapp-float {
   position: fixed;
-  bottom: 28px;
+  bottom: 90px;
   right: 28px;
   z-index: 999;
   background: var(--whatsapp);
@@ -984,7 +984,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
 
   /* WhatsApp */
-  .whatsapp-float { bottom: 20px; right: 20px; }
+  .whatsapp-float { bottom: 140px; right: 20px; }
 }
 
 /* ===== RESPONSIVE — 480px ===== */
