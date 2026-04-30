@@ -361,9 +361,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ===== SECTION FLOATING CHARACTERS ===== */
 .section-float-right {
   position: absolute;
-  right: -40px;
+  right: -20px;
   bottom: 0;
-  width: 220px;
+  width: 240px;
   height: auto;
   object-fit: contain;
   pointer-events: none;
@@ -372,7 +372,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .section-float-left {
   position: absolute;
-  left: -60px;
+  left: -20px;
   bottom: 0;
   width: 240px;
   height: auto;

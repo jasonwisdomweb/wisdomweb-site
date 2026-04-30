@@ -55,7 +55,7 @@ function injectZodiacPNGs() {
     }
 
     const size = featured ? 200 : 140;
-    const opacity = featured ? 0.45 : 0.28;
+    const opacity = featured ? 0.55 : 0.35;
     const glowColor = featured
       ? 'rgba(249,115,22,0.18)'
       : 'rgba(124,58,237,0.12)';
