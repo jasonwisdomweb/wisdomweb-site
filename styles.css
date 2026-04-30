@@ -106,20 +106,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: center;
   padding: 14px 32px;
   border-radius: 50px;
-  border: none;
-  background-image: url('assets/images/Button2.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  border: 2px solid #C4B5FD;
+  background: #EDE9FE;
   color: #7C3AED;
   font-weight: 600;
   font-size: 0.9375rem;
   cursor: pointer;
   text-decoration: none;
-  transition: filter 0.25s ease, transform 0.25s ease;
+  transition: all 0.25s ease;
   white-space: nowrap;
 }
 .btn-secondary:hover {
-  filter: brightness(0.95);
+  background: #7C3AED;
+  color: white;
+  border-color: #7C3AED;
   transform: translateY(-1px);
 }
 
@@ -165,19 +165,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex: 1;
 }
 .nav-links a {
-  padding: 8px 18px;
-  border-radius: 50px;
-  border: 1.5px solid transparent;
+  padding: 8px 12px;
   color: #1F2937;
   font-weight: 500;
   font-size: 0.9375rem;
   text-decoration: none;
-  transition: all 0.25s ease;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  border-radius: 0;
+  border: none;
+  background: none;
 }
 .nav-links a:hover {
-  border-color: #7C3AED;
   color: #7C3AED;
-  background: #f5f3ff;
+  background: none;
+  border: none;
 }
 
 .nav-cta { flex-shrink: 0; }
@@ -205,7 +207,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero {
   position: relative;
   padding: 96px 0 80px;
-  overflow: hidden;
+  overflow: visible;
   background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
 }
 
@@ -357,9 +359,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ===== SECTION FLOATING CHARACTERS ===== */
 .section-float-right {
   position: absolute;
-  right: 0;
+  right: -40px;
   bottom: 0;
-  width: 260px;
+  width: 220px;
   height: auto;
   object-fit: contain;
   pointer-events: none;
@@ -435,7 +437,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .ctp-section {
   background: linear-gradient(140deg, #FAF5FF 0%, #FFF7ED 100%);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .ctp-inner {
@@ -482,7 +484,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ===== PROGRAMMES SECTION ===== */
-.programmes-section { background: var(--bg-alt); position: relative; overflow: visible; }
+.programmes-section { background: #F5F3FF; position: relative; overflow: visible; }
 
 .programme-card {
   background: white;
@@ -564,7 +566,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ===== TESTIMONIALS ===== */
-.testimonials-section { background: var(--bg); position: relative; overflow: hidden; }
+.testimonials-section { background: var(--bg); position: relative; overflow: visible; }
 
 .testimonials-grid {
   display: grid;
@@ -572,6 +574,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 24px;
   max-width: 1000px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 .testimonial-card {
@@ -583,6 +586,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-direction: column;
   gap: 20px;
   box-shadow: var(--shadow-lg);
+  height: 100%;
 }
 
 .testimonial-avatar {
@@ -603,6 +607,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-style: italic;
   color: var(--text-light);
   line-height: 1.8;
+  flex: 1;
 }
 
 .testimonial-meta { display: flex; flex-direction: column; gap: 4px; }
@@ -616,7 +621,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .testimonial-role { font-size: 0.875rem; color: var(--text-light); }
 
 /* ===== FAQ ===== */
-.faq-section { background: var(--bg-alt); position: relative; overflow: hidden; }
+.faq-section { background: #F5F3FF; position: relative; overflow: visible; }
 
 .faq-list {
   max-width: 780px;

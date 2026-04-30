@@ -34,44 +34,65 @@ function initZodiac() {
 
 function injectZodiacPNGs() {
   const PLACEMENTS = [
-    { section: '#home',                  file: 'Horse.png',   top: 8,  left: 62, featured: true  },
-    { section: '#home',                  file: 'Dragon.png',  top: 78, left: 3,  featured: false },
-    { section: '.trust-bar',             file: 'Rat.png',     top: 20, left: 1,  featured: false },
-    { section: '.trust-bar',             file: 'Tiger.png',   top: 20, left: 94, featured: false },
-    { section: '#about',                 file: 'Monkey.png',  top: 8,  left: 90, featured: false },
-    { section: '#about',                 file: 'Goat.png',    top: 70, left: 1,  featured: false },
-    { section: '#about',                 file: 'Horse.png',   top: 40, left: 85, featured: true  },
-    { section: '#ctp',                   file: 'Snake.png',   top: 5,  left: 2,  featured: false },
-    { section: '#ctp',                   file: 'Rabbit.png',  top: 70, left: 90, featured: false },
-    { section: '#programmes',            file: 'Ox.png',      top: 5,  left: 1,  featured: false },
-    { section: '#programmes',            file: 'Horse.png',   top: 75, left: 88, featured: true  },
-    { section: '.testimonials-section',  file: 'Dog.png',     top: 5,  left: 92, featured: false },
-    { section: '.testimonials-section',  file: 'Pig.png',     top: 75, left: 1,  featured: false },
-    { section: '#faq',                   file: 'Rooster.png', top: 5,  left: 92, featured: false },
-    { section: '#faq',                   file: 'Tiger.png',   top: 80, left: 1,  featured: false },
+    { section: '#home',                 file: 'Horse.png',   top: 20, left: 72, featured: true  },
+    { section: '#home',                 file: 'Rat.png',     top: 70, left: 1,  featured: false },
+    { section: '#ctp',                  file: 'Dragon.png',  top: 15, left: 2,  featured: false },
+    { section: '#ctp',                  file: 'Goat.png',    top: 60, left: 88, featured: false },
+    { section: '#about',                file: 'Snake.png',   top: 60, left: 1,  featured: false },
+    { section: '#programmes',           file: 'Ox.png',      top: 20, left: 1,  featured: false },
+    { section: '.testimonials-section', file: 'Rooster.png', top: 15, left: 1,  featured: false },
+    { section: '.testimonials-section', file: 'Dog.png',     top: 60, left: 88, featured: false },
+    { section: '#faq',                  file: 'Pig.png',     top: 15, left: 1,  featured: false },
+    { section: '#faq',                  file: 'Monkey.png',  top: 60, left: 88, featured: false },
   ];
 
   PLACEMENTS.forEach(({ section, file, top, left, featured }, i) => {
     const el = document.querySelector(section);
     if (!el) return;
 
-    if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+    if (getComputedStyle(el).position === 'static') {
+      el.style.position = 'relative';
+    }
 
-    const size      = featured ? 220 : 160;
-    const opacity   = featured ? 0.50 : 0.30;
-    const glowColor = featured ? 'rgba(249,115,22,0.20)' : 'rgba(124,58,237,0.14)';
+    const size = featured ? 200 : 140;
+    const opacity = featured ? 0.45 : 0.28;
+    const glowColor = featured
+      ? 'rgba(249,115,22,0.18)'
+      : 'rgba(124,58,237,0.12)';
 
     const wrapper = document.createElement('div');
     wrapper.setAttribute('aria-hidden', 'true');
-    wrapper.style.cssText = `position:absolute;top:${top}%;left:${left}%;width:${size}px;pointer-events:none;user-select:none;z-index:0;`;
+    wrapper.style.cssText = `
+      position: absolute;
+      top: ${top}%;
+      left: ${left}%;
+      width: ${size}px;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    `;
 
     const glow = document.createElement('div');
-    glow.style.cssText = `position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,${glowColor} 0%,transparent 70%);z-index:0;`;
+    glow.style.cssText = `
+      position: absolute;
+      inset: -24px;
+      border-radius: 50%;
+      background: radial-gradient(circle, ${glowColor} 0%, transparent 70%);
+      z-index: 0;
+    `;
 
     const img = document.createElement('img');
     img.src = `assets/images/${file}`;
     img.alt = '';
-    img.style.cssText = `position:relative;width:100%;height:auto;opacity:${opacity};animation:zodiacFloat ${6 + (i % 3) * 1.5}s ease-in-out infinite;animation-delay:${(i * 0.6).toFixed(1)}s;z-index:1;`;
+    img.style.cssText = `
+      position: relative;
+      width: 100%;
+      height: auto;
+      opacity: ${opacity};
+      animation: zodiacFloat ${6 + (i % 3) * 1.5}s ease-in-out infinite;
+      animation-delay: ${(i * 0.6).toFixed(1)}s;
+      z-index: 1;
+    `;
 
     wrapper.appendChild(glow);
     wrapper.appendChild(img);
