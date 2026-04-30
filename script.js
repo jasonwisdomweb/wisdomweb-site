@@ -40,6 +40,68 @@ function initZodiac() {
 }
 
 
+// ===== ZODIAC SCATTER ACROSS SECTIONS =====
+
+function scatterZodiacAccents() {
+  const year   = new Date().getFullYear();
+  const animal = getZodiacAnimal(year);
+
+  const ALL_ANIMALS = ['🐭','🐂','🐯','🐰','🐲','🐍','🐴','🐑','🐵','🐓','🐶','🐷'];
+
+  const SECTION_SELECTORS = [
+    '#home',
+    '.trust-bar',
+    '#about',
+    '#ctp',
+    '#programmes',
+    '.testimonials-section',
+    '#faq',
+  ];
+
+  // Placement slots: [top%, left%] pairs per section
+  const SLOTS = [
+    [{ t: 15, l: 92 }, { t: 75, l: 5  }, { t: 45, l: 96 }],
+    [{ t: 20, l: 3  }, { t: 60, l: 90 }],
+    [{ t: 10, l: 94 }, { t: 80, l: 2  }, { t: 50, l: 97 }],
+    [{ t: 8,  l: 3  }, { t: 85, l: 95 }],
+    [{ t: 12, l: 96 }, { t: 78, l: 3  }, { t: 40, l: 94 }],
+    [{ t: 10, l: 2  }, { t: 70, l: 95 }],
+    [{ t: 8,  l: 94 }, { t: 82, l: 2  }, { t: 45, l: 96 }],
+  ];
+
+  SECTION_SELECTORS.forEach((sel, sIdx) => {
+    const section = document.querySelector(sel);
+    if (!section) return;
+
+    const computed = getComputedStyle(section).position;
+    if (computed === 'static') section.style.position = 'relative';
+
+    const slots = SLOTS[sIdx];
+    slots.forEach((slot, i) => {
+      const emoji   = ALL_ANIMALS[(sIdx * 3 + i) % ALL_ANIMALS.length];
+      const isHero  = emoji === animal.emoji;
+
+      const span        = document.createElement('span');
+      span.textContent  = emoji;
+      span.setAttribute('aria-hidden', 'true');
+      span.style.cssText = `
+        position: absolute;
+        top: ${slot.t}%;
+        left: ${slot.l}%;
+        font-size: ${isHero ? '2.5rem' : '2rem'};
+        opacity: ${isHero ? '0.25' : '0.12'};
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+        animation: zodiacFloat ${5 + (i * 1.3)}s ease-in-out infinite;
+        animation-delay: ${i * 0.7}s;
+      `;
+      section.appendChild(span);
+    });
+  });
+}
+
+
 // ===== STICKY NAV SHADOW =====
 
 function initStickyNav() {
@@ -177,6 +239,7 @@ function initScrollAnimations() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initZodiac();
+  scatterZodiacAccents();
   initStickyNav();
   initHamburger();
   initFAQ();
