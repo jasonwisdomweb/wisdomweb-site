@@ -35,7 +35,7 @@ function initZodiac() {
 function injectZodiacPNGs() {
   const PLACEMENTS = [
     { section: '#home',                 file: 'Horse.png',   top: 5,  left: 68, featured: true  },
-    { section: '#home',                 file: 'Dragon.png',  top: 72, left: 2,  featured: false },
+    { section: '#home',                 file: 'Dragon.png',  top: 75, left: 44, featured: false },
     { section: '#about',                file: 'Rabbit.png',  top: 5,  left: 88, featured: false },
     { section: '#ctp',                  file: 'Snake.png',   top: 5,  left: 88, featured: false },
     { section: '#ctp',                  file: 'Goat.png',    top: 65, left: 2,  featured: false },
