@@ -62,6 +62,10 @@ function injectZodiacPNGs() {
 
     const wrapper = document.createElement('div');
     wrapper.setAttribute('aria-hidden', 'true');
+    wrapper.className = 'zodiac-wrapper';
+    if (file === 'Horse.png' && section === '#home') {
+      wrapper.classList.add('zodiac-unicorn');
+    }
     wrapper.style.cssText = `
       position: absolute;
       top: ${top}%;
@@ -232,6 +236,25 @@ function initScrollAnimations() {
 }
 
 
+// ===== STICKY CTP BANNER =====
+
+function initCTPBanner() {
+  const banner   = document.getElementById('ctp-banner');
+  const closeBtn = document.getElementById('ctp-banner-close');
+  if (!banner || !closeBtn) return;
+
+  if (sessionStorage.getItem('ctp-banner-dismissed')) {
+    banner.style.display = 'none';
+    return;
+  }
+
+  closeBtn.addEventListener('click', () => {
+    banner.style.display = 'none';
+    sessionStorage.setItem('ctp-banner-dismissed', '1');
+  });
+}
+
+
 // ===== INIT =====
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -242,4 +265,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initSmoothScroll();
   initScrollAnimations();
+  initCTPBanner();
 });
