@@ -236,6 +236,17 @@ function initScrollAnimations() {
 }
 
 
+// ===== FLIP CARDS =====
+
+function initFlipCards() {
+  document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  });
+}
+
+
 // ===== STICKY CTP BANNER =====
 
 function initCTPBanner() {
@@ -265,5 +276,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initSmoothScroll();
   initScrollAnimations();
+  initFlipCards();
   initCTPBanner();
 });

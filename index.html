@@ -153,31 +153,150 @@
 
   <!-- ===== CTP SECTION ===== -->
   <section class="section ctp-section" id="ctp">
+    <div class="zodiac-wrapper" aria-hidden="true" style="position:absolute;top:5%;left:88%;width:140px;pointer-events:none;user-select:none;z-index:0;">
+      <div style="position:absolute;inset:-24px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.14) 0%,transparent 70%);z-index:0;"></div>
+      <img src="assets/images/Snake.png" alt="" style="position:relative;width:100%;height:auto;opacity:0.35;animation:zodiacFloat 6s ease-in-out infinite;z-index:1;">
+    </div>
+    <div class="zodiac-wrapper" aria-hidden="true" style="position:absolute;top:65%;left:2%;width:140px;pointer-events:none;user-select:none;z-index:0;">
+      <div style="position:absolute;inset:-24px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.14) 0%,transparent 70%);z-index:0;"></div>
+      <img src="assets/images/Goat.png" alt="" style="position:relative;width:100%;height:auto;opacity:0.35;animation:zodiacFloat 7.5s ease-in-out infinite;animation-delay:0.6s;z-index:1;">
+    </div>
+
     <div class="container">
+
+      <!-- Block A: Intro -->
       <div class="ctp-inner">
         <div class="ctp-visual">
-          <img src="assets/images/ctp-character.png" alt="WisdomWeb student character" class="ctp-character-img">
+          <img src="assets/images/ctp-character.png" alt="WisdomWeb student" class="ctp-character-img">
         </div>
-
         <div class="ctp-content">
-          <h2>What is the <span class="text-accent">Computational Thinking Profile</span>?</h2>
-          <p>Before your child joins any class, we run a 45-minute diagnostic session. We assess six dimensions of how they think — not what they already know. The result is a personalised report that places them in exactly the right programme.</p>
-
-          <div class="ctp-chips">
-            <span class="chip">🔢 Decomposition</span>
-            <span class="chip">🔍 Pattern Recognition</span>
-            <span class="chip">🧩 Abstraction</span>
-            <span class="chip">📋 Algorithms</span>
-            <span class="chip">🔄 Logic</span>
-            <span class="chip">💡 Problem Solving</span>
-          </div>
-
-          <a href="https://wa.me/6591231234?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20the%20Thinking%20Profile%20session%20for%20my%20child."
-             class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
-            Book A Free CTP Session
-          </a>
+          <h2>What is the <span style="color:var(--accent)">Computational Thinking Profile?</span></h2>
+          <p>Before your child joins any class, we run a free 45-minute diagnostic session. One of our teachers works through a structured set of challenges with your child — not a test, not a quiz. We're watching how they approach problems, not whether they get the right answer.</p>
+          <p>Every child thinks differently. The CTP tells us exactly how your child thinks — so we can place them in precisely the right programme, with a teacher who already knows them before Lesson 1.</p>
+          <a href="https://wa.me/6596795975?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20Computational%20Thinking%20Profile%20for%20my%20child." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book A Free CTP Session</a>
         </div>
       </div>
+
+      <!-- Block B: 6 Flip Cards -->
+      <div class="ctp-dimensions">
+        <h3 class="ctp-dimensions-title">The 6 dimensions we assess</h3>
+        <div class="flip-cards-grid">
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets/images/Ox.png" alt="" class="flip-card-zodiac">
+                <h4>Decomposition</h4>
+                <span class="flip-hint">Tap to learn more</span>
+              </div>
+              <div class="flip-card-back">
+                <h4>Decomposition</h4>
+                <p>Can your child take something overwhelming and break it into pieces they can actually work with? This is the foundation of all coding — and most of life. We give them a big messy challenge and watch how they start.</p>
+                <p class="flip-question"><em>Are they paralysed by the whole, or do they find a first step?</em></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets/images/Snake.png" alt="" class="flip-card-zodiac">
+                <h4>Pattern Recognition</h4>
+                <span class="flip-hint">Tap to learn more</span>
+              </div>
+              <div class="flip-card-back">
+                <h4>Pattern Recognition</h4>
+                <p>Patterns are everywhere in code — repeated instructions, predictable sequences, familiar structures. Children who spot patterns naturally learn to code faster because they're not memorising, they're seeing. We give them sequences and watch what they notice.</p>
+                <p class="flip-question"><em>Do they spot what repeats before we tell them to look for it?</em></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets/images/Dragon.png" alt="" class="flip-card-zodiac">
+                <h4>Abstraction</h4>
+                <span class="flip-hint">Tap to learn more</span>
+              </div>
+              <div class="flip-card-back">
+                <h4>Abstraction</h4>
+                <p>The hardest skill to teach: knowing what to ignore. Coding requires holding the important details while letting go of everything else. We give them a complex scenario and see what they focus on.</p>
+                <p class="flip-question"><em>Can they zoom out and see the shape of the problem, not just the noise?</em></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets/images/Rabbit.png" alt="" class="flip-card-zodiac">
+                <h4>Algorithms</h4>
+                <span class="flip-hint">Tap to learn more</span>
+              </div>
+              <div class="flip-card-back">
+                <h4>Algorithms</h4>
+                <p>An algorithm is just a set of instructions in the right order. But the right order matters enormously. We give children a task and ask them to explain exactly how they'd do it — step by step, nothing assumed.</p>
+                <p class="flip-question"><em>Do they think in sequences? Can they plan before they act?</em></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets/images/Monkey.png" alt="" class="flip-card-zodiac">
+                <h4>Logic</h4>
+                <span class="flip-hint">Tap to learn more</span>
+              </div>
+              <div class="flip-card-back">
+                <h4>Logic</h4>
+                <p>When there's no obvious answer, what does your child do? Logic is about reasoning through uncertainty — using what you know to figure out what you don't. We present situations with no single right answer and watch how they reason.</p>
+                <p class="flip-question"><em>Do they guess, or do they think it through?</em></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets/images/Horse.png" alt="" class="flip-card-zodiac">
+                <h4>Problem Solving</h4>
+                <span class="flip-hint">Tap to learn more</span>
+              </div>
+              <div class="flip-card-back">
+                <h4>Problem Solving</h4>
+                <p>This is where everything comes together. When your child gets stuck — and they will — what happens next? Do they shut down, or do they try something different? Resilience in the face of confusion is one of the most important things we look for.</p>
+                <p class="flip-question"><em>What does your child do at the moment they don't know what to do?</em></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Block C: What you receive -->
+      <div class="ctp-outcomes">
+        <h3 class="ctp-dimensions-title">What you receive after the session</h3>
+        <div class="ctp-outcomes-grid">
+          <div class="ctp-outcome-card">
+            <div class="ctp-outcome-icon">📄</div>
+            <h4>A Personalised CTP Report</h4>
+            <p>A clear summary of how your child thinks across all 6 dimensions — written in plain language, not jargon.</p>
+          </div>
+          <div class="ctp-outcome-card">
+            <div class="ctp-outcome-icon">🎯</div>
+            <h4>A Precise Programme Placement</h4>
+            <p>We tell you exactly which programme fits your child, and why — based on evidence, not guesswork.</p>
+          </div>
+          <div class="ctp-outcome-card">
+            <div class="ctp-outcome-icon">👋</div>
+            <h4>A Teacher Who Already Knows Them</h4>
+            <p>Before Lesson 1, your child's teacher has already read the report. They know how your child thinks before they meet.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
